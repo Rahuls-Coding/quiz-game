@@ -14,7 +14,11 @@ class App extends Component {
       count: 0,
       count1: 0,
       count2: 0,
-      count3: 0
+      count3: 0, 
+      color: 111827,
+      color1: 111827,
+      color2: 111827,
+      color3: 111827,
     }
   }
   onSearched = (event) => {
@@ -36,41 +40,50 @@ class App extends Component {
             <div className="text-white text-3xl">How many people are playing?</div>
             
             <div className= "flex flex-row space-x-10">
-                <Profile styling = "px-5 pt-5 pb-5 bg-gradient-to-r from-[#DC2323] to-[#ED9B81] cursor-pointer" onClicked= {() => {
+                <Profile styling = {`px-5 pt-5 pb-5 bg-gradient-to-r from-[#DC2323] to-[#ED9B81] rounded-xl cursor-pointer border-4 border-[#${this.state.color}]`} 
+                onClicked= {() => {
                   if (this.state.count < 1) {
                     this.setState({ count: this.state.count + 1 })
+                    this.setState({color: "336A9A"})
                   } else {
                     this.setState({ count: this.state.count - 1 })
+                    this.setState({color: "111827"})
                   }
                   
                   }}/>
                 <Profile 
-                styling = "px-5 pt-5 pb-5 bg-gradient-to-r from-[#FF7455] to-[#FD9E2F] cursor-pointer" 
+                styling = {`px-5 pt-5 pb-5 bg-gradient-to-r from-[#FF7455] to-[#FD9E2F] rounded-xl cursor-pointer border-4 border-[#${this.state.color1}]`} 
                 onClicked= {() => {
                   if (this.state.count1 < 1) {
                     this.setState({ count1: this.state.count1 + 1 })
+                    this.setState({color1: "336A9A"})
                   } else {
                     this.setState({ count1: this.state.count1 - 1 })
+                    this.setState({color1: "111827"})
                   }
                   
                   }}/>
                 <Profile 
-                styling = "px-5 pt-5 pb-5 bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer" 
+                styling = {`px-5 pt-5 pb-5 bg-gradient-to-r from-[#1052FD] to-[#3CD0F0] rounded-xl cursor-pointer border-4 border-[#${this.state.color2}]`} 
                 onClicked= {() => {
                   if (this.state.count2 < 1) {
                     this.setState({ count2: this.state.count2 + 1 })
+                    this.setState({color2: "336A9A"})
                   } else {
                     this.setState({ count2: this.state.count2 - 1 })
+                    this.setState({color2: "111827"})
                   }
                   
                   }}/>
                 <Profile 
-                styling = "px-5 pt-5 pb-5 bg-gradient-to-r from-[#89F4C1] to-[#0BCA08] cursor-pointer" 
+                styling = {`px-5 pt-5 pb-5 bg-gradient-to-r from-[#89F4C1] to-[#0BCA08] rounded-xl cursor-pointer border-4 border-[#${this.state.color3}]`} 
                 onClicked= {() => {
                   if (this.state.count3 < 1) {
                     this.setState({ count3: this.state.count3 + 1 })
+                    this.setState({color3: "336A9A"})
                   } else {
                     this.setState({ count3: this.state.count3 - 1 })
+                    this.setState({color3: "111827"})
                   }
                   
                   }}/>
