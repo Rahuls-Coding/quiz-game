@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = ({searchField}) => {
   return (
-  <div className="bg-[#131828] text-center grid justify-items-center items-center h-screen">
+
 		<div className=" max-w-sm mx-auto overflow-hidden rounded-xl drop-shadow-4xl bg-[#30374E] border-2 border-black">
 				<div class="px-6 pt-8 py-3">
 					<h1 class=" w-335 h-101 text-xl font-semibold text-gray-800 dark:text-white">When was the industrial revolution born?</h1>
@@ -18,7 +18,7 @@ const Card = ({searchField}) => {
 					
 				</div>
 		</div>
-  </div>
+
 	
   );
 }

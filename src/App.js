@@ -30,7 +30,20 @@ class App extends Component {
     if (this.state.page === "question"){
       return (
       <div className="App">
-        <Card searchField={this.onSearched}/>
+        <div className="bg-[#131828] text-center grid justify-items-center items-center h-screen">
+          <div>
+            <Card searchField={this.onSearched}/>
+            <div className="p-10">
+                <button 
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  onClick = {() => {this.setState({page: "start"})}}> Quit 
+                </button>
+            </div>
+           
+          </div>
+          
+        </div>
+        
       </div>
       ); 
     } else if (this.state.page === "start"){
@@ -38,7 +51,6 @@ class App extends Component {
         <div className="App">
           <div className="bg-[#131828] text-center grid justify-items-center items-center h-screen">
             <div className="text-white text-3xl">How many people are playing?</div>
-            
             <div className= "flex flex-row space-x-10">
                 <Profile styling = {`px-5 pt-5 pb-5 bg-gradient-to-r from-[#DC2323] to-[#ED9B81] rounded-xl cursor-pointer border-4 border-[#${this.state.color}]`} 
                 onClicked= {() => {
@@ -89,6 +101,8 @@ class App extends Component {
                   }}/>
             </div>
             <div className="text-white text-3xl">{`Number Of Players Selected: ${this.state.count+this.state.count1+this.state.count2+this.state.count3}`}</div>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick = {() => {this.setState({page: "question"})}}> Next </button>
           </div>  
         </div>
         
