@@ -2,7 +2,7 @@ import './App.css';
 import Card from './components/Card'
 import Profile from "./components/Profile"
 import Input from "./components/Input"
-import DisQuestion from "./components/DisQuestion"
+// import DisQuestion from "./components/DisQuestion"
 import React, { Component } from 'react'
 
 
@@ -12,7 +12,7 @@ class App extends Component {
     super() 
     this.state = {
       search : "",
-      page: "start",
+      page: "upload",
       count: 0,
       count1: 0,
       count2: 0,
@@ -117,10 +117,28 @@ class App extends Component {
       return (
           <div className="App">
             <div className="bg-[#131828] text-center grid justify-items-center items-center h-screen">
-              <div className="flex flex-row">
-                <Input />
-                <DisQuestion />
+            <div className="text-white text-3xl">Upload Your Quiz!</div>
+              <div className="">
+                <div className="flex flex-row">
+                <div className="w-full text-white text-2xl underline"> Questions </div>
+                <div className="w-full text-white text-2xl underline"> Answers </div>
+                </div>
+                  <div className="flex flex-row ">
+                    
+                    <Input />
+                    <Input />
+                  </div>
+                  <div className="flex flex-row ">
+                    <Input />
+                    <Input />
+                  </div>
+                  <div className="flex flex-row">
+                    <Input />
+                    <Input />
+                  </div>
               </div>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick = {() => {this.setState({page: "upload"})}}> Next </button>
             </div>
           </div>
       )
