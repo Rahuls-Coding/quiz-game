@@ -6,17 +6,17 @@ Quiz-Game: A game where you can upload questions and answers and play with frien
 
 
 ## Installation 
-`npm install`
+`$ npm install`
 
 ## Running the App
-`# development
-$ yarn start
+` development
+$ npm start
 
-# watch mode
-$ yarn start:watch
+  watch mode
+$ npm start:watch
 
-# production mode
-$ yarn start:prod`
+ production mode
+$ npm start:prod`
 
 ##Technoloiges Used
 
