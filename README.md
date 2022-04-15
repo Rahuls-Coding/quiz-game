@@ -2,7 +2,7 @@
 
 Quiz-Game: A game where you can upload questions and answers and play with friends. The app keeps track of players, their score, their answers and more! 
 
-⚠️⚠️Keep in mind that this app is still in progress!⚠️⚠️
+⚠️**Keep in mind that this app is still in progress!**⚠️
 
 
 ## Installation 
