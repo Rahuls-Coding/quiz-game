@@ -9,14 +9,14 @@ Quiz-Game: A game where you can upload questions and answers and play with frien
 `$ npm install`
 
 ## Running the App
-` development
-$ npm start
+Development:
+`$ npm start`
 
-  watch mode
-$ npm start:watch
+Watch Mode:
+`$ npm start:watch`
 
- production mode
-$ npm start:prod`
+Production Mode:
+`$ npm start:prod`
 
 ##Technoloiges Used
 
