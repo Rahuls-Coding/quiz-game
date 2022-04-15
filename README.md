@@ -18,7 +18,7 @@ Watch Mode:
 Production Mode:
 `$ npm start:prod`
 
-##Technoloiges Used
+## Technoloiges Used
 
 * [Tailwind CSS](https://tailwindcss.com/)
 * `Node.js`
