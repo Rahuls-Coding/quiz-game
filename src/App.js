@@ -6,6 +6,13 @@ import Input from "./components/Input"
 import React, { Component } from 'react'
 
 
+// class Square extends HTMLElement {
+//   // Specify observed attributes so that
+//   // attributeChangedCallback will work
+//   static get observedAttributes() {
+//     return ['c', 'l'];
+//   }
+// }
 
 class App extends Component {
   constructor() {
@@ -27,6 +34,12 @@ class App extends Component {
     this.setState({search: event.target.value})
     console.log(event.target.value)
   }
+  onAdded = (event) => {
+    let square = document.createElement('custom-square');
+    square.setAttribute('l', '100');
+    square.setAttribute('c', 'red');
+    document.body.appendChild(square);
+  }
   
   render() {
     if (this.state.page === "question"){
@@ -37,7 +50,7 @@ class App extends Component {
             <Card searchField={this.onSearched}/>
             <div className="p-10">
                 <button 
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  className="bg-blue-500 hover:bg-blue-700 shadow-lg shadow-blue-500/50 text-white font-bold py-2 px-7 rounded"
                   onClick = {() => {this.setState({page: "start"})}}> Quit 
                 </button>
             </div>
@@ -105,7 +118,7 @@ class App extends Component {
             <div className="">
               <div className="text-white text-3xl">{`Number Of Players Selected: ${this.state.count+this.state.count1+this.state.count2+this.state.count3}`}</div>
               <div className = "py-3"></div>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              <button className="bg-blue-500 hover:bg-blue-700 shadow-lg shadow-blue-500/50 text-white font-bold py-2 px-4 rounded"
               onClick = {() => {this.setState({page: "upload"})}}> Next </button>
             </div>
             
@@ -115,30 +128,41 @@ class App extends Component {
       )
     } else if (this.state.page === "upload"){
       return (
-          <div className="App">
-            <div className="bg-[#131828] text-center grid justify-items-center items-center h-screen">
-            <div className="text-white text-3xl">Upload Your Quiz!</div>
+          <div className="App text-center grid justify-items-center items-center" id= "App">
+            <div className="text-center grid justify-items-center items-center ">
+            <div className="text-white text-3xl p-10">Upload Your Quiz!</div>
               <div className="">
                 <div className="flex flex-row">
                 <div className="w-full text-white text-2xl underline"> Questions </div>
                 <div className="w-full text-white text-2xl underline"> Answers </div>
                 </div>
-                  <div className="flex flex-row ">
-                    
-                    <Input />
-                    <Input />
-                  </div>
-                  <div className="flex flex-row ">
-                    <Input />
-                    <Input />
-                  </div>
-                  <div className="flex flex-row">
-                    <Input />
-                    <Input />
-                  </div>
+                <div> 
+                      <Input/>
+                      <Input/>
+                      {/* <Input/>
+                      <Input/>
+                      <Input/>
+                      <Input/>
+                      <Input/>
+                      <Input/>
+                      <Input/>
+                      <Input/>
+                      <Input/>
+                      <Input/> */}
+                </div>
+                  <button 
+                  className="cursor-pointer text-sky-500 underline decoration-sky-500 decoration-wavy decoration-1"
+                  onClick = {() => this.onAdded()}
+                  >
+                   Add More
+                  
+                  </button>
               </div>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick = {() => {this.setState({page: "upload"})}}> Next </button>
+              <div className = "p-10">
+                <button className="bg-blue-500 hover:bg-blue-700 shadow-lg shadow-blue-500/70 hover:shadow-lg hover:shadow-blue-700/70 text-white font-bold py-2 px-7 rounded"
+                onClick = {() => {this.setState({page: "upload"})}}> Next </button>
+              </div>
+              
             </div>
           </div>
       )
