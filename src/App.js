@@ -1,7 +1,7 @@
 import './App.css';
 import Card from './components/Card'
 import Profile from "./components/Profile"
-import Input from "./components/Input"
+import CardList from "./components/terms/CardList"
 // import DisQuestion from "./components/DisQuestion"
 import React, { Component } from 'react'
 
@@ -35,10 +35,7 @@ class App extends Component {
     console.log(event.target.value)
   }
   onAdded = (event) => {
-    let square = document.createElement('custom-square');
-    square.setAttribute('l', '100');
-    square.setAttribute('c', 'red');
-    document.body.appendChild(square);
+    React.createElement("Input")
   }
   
   render() {
@@ -129,35 +126,9 @@ class App extends Component {
     } else if (this.state.page === "upload"){
       return (
           <div className="App text-center grid justify-items-center items-center" id= "App">
-            <div className="text-center grid justify-items-center items-center ">
+            <div className="text-center grid justify-items-center items-center min-h-screen ">
             <div className="text-white text-3xl p-10">Upload Your Quiz!</div>
-              <div className="">
-                <div className="flex flex-row">
-                <div className="w-full text-white text-2xl underline"> Questions </div>
-                <div className="w-full text-white text-2xl underline"> Answers </div>
-                </div>
-                <div> 
-                      <Input/>
-                      <Input/>
-                      {/* <Input/>
-                      <Input/>
-                      <Input/>
-                      <Input/>
-                      <Input/>
-                      <Input/>
-                      <Input/>
-                      <Input/>
-                      <Input/>
-                      <Input/> */}
-                </div>
-                  <button 
-                  className="cursor-pointer text-sky-500 underline decoration-sky-500 decoration-wavy decoration-1"
-                  onClick = {() => this.onAdded()}
-                  >
-                   Add More
-                  
-                  </button>
-              </div>
+              <CardList/>
               <div className = "p-10">
                 <button className="bg-blue-500 hover:bg-blue-700 shadow-lg shadow-blue-500/70 hover:shadow-lg hover:shadow-blue-700/70 text-white font-bold py-2 px-7 rounded"
                 onClick = {() => {this.setState({page: "upload"})}}> Next </button>
