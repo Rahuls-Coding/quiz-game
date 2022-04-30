@@ -15,10 +15,3 @@ const Button = (props) => {
   export default Button;
 
 
-//   <button 
-//           type = "submit"
-//           className="cursor-pointer text-sky-500 underline decoration-sky-500 decoration-wavy decoration-1"
-//           onClick = {() => {this.AddCard()}}
-//         >
-//           Add More
-//         </button>

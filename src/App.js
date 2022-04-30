@@ -6,20 +6,12 @@ import CardList from "./components/terms/CardList"
 import React, { Component } from 'react'
 
 
-// class Square extends HTMLElement {
-//   // Specify observed attributes so that
-//   // attributeChangedCallback will work
-//   static get observedAttributes() {
-//     return ['c', 'l'];
-//   }
-// }
-
 class App extends Component {
   constructor() {
     super() 
     this.state = {
       search : "",
-      page: "upload",
+      page: "start",
       count: 0,
       count1: 0,
       count2: 0,
@@ -28,6 +20,7 @@ class App extends Component {
       color1: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#FF7455] to-[#FD9E2F] rounded-xl cursor-pointer border-4 border-[#131828] shadow-xl",
       color2: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#1052FD] to-[#3CD0F0] rounded-xl cursor-pointer border-4 border-[#131828] shadow-xl",
       color3: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#89F4C1] to-[#0BCA08] rounded-xl cursor-pointer border-4 border-[#131828] shadow-xl",
+      player: []
     }
   }
   onSearched = (event) => {
@@ -68,6 +61,8 @@ class App extends Component {
                 onClicked= {() => {
                   if (this.state.count < 1) {
                     this.setState({ count: this.state.count + 1 })
+                    this.state.player.push("Player 1")
+                    alert(this.state.player)  
                     this.setState({color: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#DC2323] to-[#ED9B81] rounded-xl cursor-pointer border-4 border-[#336A9A] shadow-xl"})
                   } else {
                     this.setState({ count: this.state.count - 1 })
@@ -80,6 +75,8 @@ class App extends Component {
                 onClicked= {() => {
                   if (this.state.count1 < 1) {
                     this.setState({ count1: this.state.count1 + 1 })
+                    this.state.player.push("Player 2")
+                    alert(this.state.player) 
                     this.setState({color1: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#FF7455] to-[#FD9E2F] rounded-xl cursor-pointer border-4 border-[#336A9A] shadow-xl"})
                   } else {
                     this.setState({ count1: this.state.count1 - 1 })
@@ -92,6 +89,8 @@ class App extends Component {
                 onClicked= {() => {
                   if (this.state.count2 < 1) {
                     this.setState({ count2: this.state.count2 + 1 })
+                    this.state.player.push("Player 3")
+                    alert(this.state.player) 
                     this.setState({color2: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#1052FD] to-[#3CD0F0] rounded-xl cursor-pointer border-4 border-[#336A9A] shadow-xl"})
                   } else {
                     this.setState({ count2: this.state.count2 - 1 })
@@ -104,9 +103,13 @@ class App extends Component {
                 onClicked= {() => {
                   if (this.state.count3 < 1) {
                     this.setState({ count3: this.state.count3 + 1 })
+                    this.state.player.push("Player 4")
+                    alert(this.state.player) 
                     this.setState({color3: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#89F4C1] to-[#0BCA08] rounded-xl cursor-pointer border-4 border-[#336A9A] shadow-xl"})
                   } else {
                     this.setState({ count3: this.state.count3 - 1 })
+                    this.state.player.remove("Player 4")
+                    alert(this.state.player) 
                     this.setState({color3: "px-5 pt-5 pb-5 bg-gradient-to-r from-[#89F4C1] to-[#0BCA08] rounded-xl cursor-pointer border-4 border-[#131828] shadow-xl"})
                   }
                   
@@ -115,7 +118,7 @@ class App extends Component {
             <div className="">
               <div className="text-white text-3xl">{`Number Of Players Selected: ${this.state.count+this.state.count1+this.state.count2+this.state.count3}`}</div>
               <div className = "py-3"></div>
-              <button className="bg-blue-500 hover:bg-blue-700 shadow-lg shadow-blue-500/50 text-white font-bold py-2 px-4 rounded"
+              <button className="bg-blue-500 hover:bg-blue-700 shadow-lg shadow-blue-500/70 hover:shadow-lg hover:shadow-blue-700/70 text-white font-bold py-2 px-7 rounded"
               onClick = {() => {this.setState({page: "upload"})}}> Next </button>
             </div>
             
