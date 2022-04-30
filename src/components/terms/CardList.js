@@ -16,8 +16,9 @@ function CardList () {
     } 
   
     function deleteComponent() {
-        
+        if (components.length > 1) {
         setComponents(components.slice(0, components.length - 1)) 
+        }
         
     }
   return (
