@@ -11,7 +11,7 @@ class App extends Component {
     super() 
     this.state = {
       search : "",
-      page: "start",
+      page: "upload",
       count: 0,
       count1: 0,
       count2: 0,
@@ -54,7 +54,7 @@ class App extends Component {
     } else if (this.state.page === "start"){
       return (
         <div className="App">
-            <div className="bg-[#131828] text-center grid justify-items-center items-center h-screen">
+            <div className="text-center grid justify-items-center items-center h-screen">
             <div className="text-white text-3xl">How many people are playing?</div>
             <div className= "flex flex-row space-x-10">
                 <Profile styling = {this.state.color} 
