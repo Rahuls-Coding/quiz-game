@@ -1,7 +1,7 @@
 import './App.css';
 import Card from './components/Card'
 // import Profile from "./components/Profile"
-import Signin from "./components/Signin"
+import Signin from "./components/Login/Signin"
 import ChoosePlayer from './components/ChoosePlayer';
 import CardList from "./components/terms/CardList"
 import React, { Component } from 'react'
@@ -71,9 +71,7 @@ class App extends Component {
       )
     } else if (this.state.page === "sign-in"){
       return (
-        <div className="App">
-        <Signin/>
-        </div>
+       <Signin/>
       )
     }
     
